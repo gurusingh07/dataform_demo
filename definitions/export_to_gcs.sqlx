@@ -1,7 +1,7 @@
 config {
-    "name": "crime",
-    "type": "view",
-    "tags": ["daily"]
+  type: "view",
+  schema: "crime",
+  name: "export_data"
 }
 
 SELECT

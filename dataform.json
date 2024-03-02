@@ -3,6 +3,18 @@
   "assertionSchema": "dataform_assertions",
   "warehouse": "bigquery",
   "defaultDatabase": "project-guru-1",
-  "defaultLocation": "US"
+  "defaultLocation": "US",
+  "actions": [
+    {
+      "name": "export_to_gcs",
+      "type": "operations",
+      "dependencies": ["crime.export_data"],
+      "put": {
+        "file_format": "csv",
+        "source": "crime.export_data",
+        "destination": "gs://dataform_test1/output.csv"
+      }
+    }
+  ]
 }
-    
+   
