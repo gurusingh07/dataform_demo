@@ -1,0 +1,15 @@
+config {
+    "type": "operations",
+    "tags": ["daily"]
+}
+
+EXPORT DATA
+  OPTIONS( uri = CONCAT( 'gs://dataform_test1/output_', FORMAT_DATE('%Y%m%d', CURRENT_DATE()), '_*.tsv' ),
+    format = 'CSV',
+    OVERWRITE = TRUE,
+    header = TRUE,
+    field_delimiter = '|' ) AS (
+  SELECT
+    *
+  FROM
+    ${ref("crime")} );

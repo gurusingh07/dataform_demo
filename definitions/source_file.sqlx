@@ -1,0 +1,15 @@
+config {
+    "name": "crime",
+    "type": "view",
+    "tags": ["daily"]
+}
+
+SELECT
+  case_number,
+  description,
+  arrest,
+  location_description,
+  location,
+  fbi_code
+FROM
+  `bigquery-public-data.chicago_crime.crime`
